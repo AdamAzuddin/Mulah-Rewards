@@ -1,3 +1,7 @@
+html {
+  font-size: 16px;
+}
+
 html,
 body {
   height: 100%;
@@ -9,66 +13,67 @@ body {
   flex-direction: column;
 }
 
-body{
-    overflow: hidden;
+body {
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 /* Make the container fill available vertical space */
 .container {
-    max-width: 430px;
-    width: 100%;
-    padding: 20px;
-    background-color: white;
-    margin: 0 auto 0 auto; /* centers horizontally */
-  }
-  
+  width: 100%;
+  max-width: 430px;
+  padding: 1.25rem;
+  background-color: white;
+  margin: 0 auto;
+}
 
 /* Title style */
 h1.mulah-title {
-  font-size: 4rem;
+  font-size: clamp(2rem, 5vw, 4rem);
   color: #f3751e;
   text-align: center;
-  margin-top: 20px;
+  margin-top: clamp(1rem, 3vh, 1.25rem);
 }
 
 /* Registration form heading */
 h2 {
   color: #717070;
-  font-size: 4rem;
+  font-size: clamp(2rem, 6vw, 4rem);
   font-weight: 200;
-  margin-bottom: 20px;
-  margin-top: 0;
+  margin: 0 0 1rem 0;
+  line-height: 1.2;
 }
 
 .please-fill-in {
   color: #717070;
-  font-size: 1.4rem;
+  font-size: clamp(1rem, 3vw, 1.4rem);
   font-weight: 200;
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
 }
 
 /* Input group for each label and input pair */
 .input-group {
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
 }
 
 /* Label style */
 label {
-  font-size: 1.2rem;
-  margin-bottom: 8px;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
   color: #333;
   display: inline-block;
 }
 
 /* Input field styles */
 .form-input {
-  font-size: 1.2rem;
-  padding: 12px;
-  margin-top: 8px;
+  font-size: 1rem;
+  padding: 0.75rem;
+  margin-top: 0.5rem;
   width: 100%;
-  border: 1px solid #ccc; /* Gray border */
-  border-radius: 12px; /* Slight rounded corners for the inputs */
+  border: 1px solid #ccc;
+  border-radius: 0.75rem;
   outline: none;
+  box-sizing: border-box;
 }
 
 .form-input:focus {
@@ -76,37 +81,34 @@ label {
   box-shadow: 0 0 5px rgba(243, 117, 30, 0.5);
 }
 
-/* Birthday inputs container (for horizontal layout) */
+/* Birthday inputs container */
 .birthday-container {
   display: flex;
-  justify-content: space-between;
+  gap: 0.625rem;
+  width: 100%;
 }
 
 .date-input {
-  width: 30%; /* Ensure the inputs are side by side */
-  margin-right: 10px; /* Space between the inputs */
-  border-radius: 4px; /* Slight rounded corners for date inputs */
-}
-
-.date-input:last-child {
-  margin-right: 0; /* Remove margin on the last input */
+  flex: 1;
+  min-width: 0;
+  font-size: 1rem;
 }
 
 /* Error message style */
 .error-message {
   color: red;
-  font-size: 1rem;
-  margin-top: 5px;
+  font-size: 0.875rem;
+  margin-top: 0.3125rem;
 }
 
 /* Submit button style */
 .submit-button {
-  padding: 12px 30px;
+  padding: 0.75rem 1.875rem;
   background-color: #f3751e;
   color: white;
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 3vw, 1.2rem);
   border: none;
-  border-radius: 30px; /* Rounded corners for the submit button */
+  border-radius: 30px;
   cursor: pointer;
   transition: background-color 0.3s;
   width: 100%;
@@ -116,14 +118,14 @@ label {
   background-color: #d8631a;
 }
 
-/* Footer styling (reuse same as previous page if needed) */
+/* Footer styling */
 footer {
   width: 100%;
   text-align: center;
-  padding: 36px 0;
-  margin-top: 150px;
+  padding: clamp(1.5rem, 4vh, 2.25rem) 0;
+  margin-top: clamp(3rem, 10vh, 9.375rem);
   background-color: white;
-  font-size: 2rem;
+  font-size: clamp(1rem, 3vw, 2rem);
   color: #797979;
   border-top: 1px solid #ccc;
 }
@@ -133,28 +135,32 @@ footer .footer-brand {
 }
 
 /* Responsive Design */
-@media (max-width: 600px) {
-  body {
-    padding: 10px;
+@media (max-width: 480px) {
+  html {
+    font-size: 14px;
   }
 
-  .form-input,
-  .submit-button {
-    width: 100%;
-    font-size: 1rem;
-  }
-
-  h2 {
-    font-size: 1.8rem;
+  .container {
+    padding: 1rem;
   }
 
   .birthday-container {
-    flex-direction: column; /* Stack inputs vertically on small screens */
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 320px) {
+  html {
+    font-size: 12px;
+  }
+
+  .birthday-container {
+    flex-direction: column;
   }
 
   .date-input {
     width: 100%;
-    margin-bottom: 10px; /* Add space between inputs in the column layout */
+    margin-bottom: 0.625rem;
   }
 
   .date-input:last-child {
