@@ -1,7 +1,6 @@
 /* Ensure no scrolling and fixed dimensions */
 html, body {
-    width: 626px;
-    height: 1136px;
+    height: 100%;
     margin: 0;
     padding: 0;
     overflow: hidden;
