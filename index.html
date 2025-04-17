@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Check Loyalty Points</title>
+    <script>
+      function checkPhoneNumber() {
+        const countryCode = document.getElementById("countryCode").value;
+        const phoneNumber = countryCode + document.getElementById("phoneNumber").value;
+
+        if (phoneNumber === "+60173527250") {
+          window.location.href = "registration.html";
+        } else {
+          alert("Invalid phone number! Please enter a valid number.");
+        }
+      }
+    </script>
+    <link rel="stylesheet" type="text/css" href="/static/styles.css" />
+  </head>
+  <body>
+    <h1 class="mulah-title">Mulah</h1>
+
+    <div class="container">
+      <h2 class="welcome-text">Hello, <br /> Welcome !</h2>
+      <div class="check-loyalty-text">Check Your Loyalty Points & Rewards</div>
+
+      <div class="phone-input-container">
+        <div class="phone-number">
+          <select id="countryCode">
+            <option value="+60">+60</option>
+          </select>
+          <input
+            type="text"
+            id="phoneNumber"
+            placeholder="Enter your mobile number"
+          />
+          <span class="checkmark">&#10003;</span>
+        </div>
+      </div>
+
+      <button onclick="checkPhoneNumber()" class="check-loyalty-points-button">
+        Check Loyalty Points
+      </button>
+    </div>
+
+    <footer>
+        Powered by <span class="footer-brand">MulahRewards.com</span>
+      </footer>
+      
+  </body>
+</html>

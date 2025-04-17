@@ -1,0 +1,69 @@
+/* Ensure no scrolling and fixed dimensions */
+html, body {
+    width: 626px;
+    height: 1136px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Center container horizontally */
+.container {
+    max-width: 430px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background-color: white;
+    box-sizing: border-box;
+    text-align: left;
+    border-radius: 8px; /* Rounded corners for container */
+}
+
+/* Mulah title styling */
+.mulah-title {
+    font-family: 'Arial', sans-serif;
+    color: #f3751e;
+    font-size: 4rem; /* Increased font size */
+    margin: 50px 0 40px 0;
+    text-align: center;
+    text-transform: uppercase; /* Uppercase for a more modern look */
+}
+
+/* Welcome message styling */
+.welcome {
+    font-size: 3rem; /* Increased font size */
+    color: gray;
+    margin: 40px 0 70px 0;
+    text-align: center;
+}
+
+/* Info section styling */
+.info-section {
+    margin-top: 30px;
+}
+
+.phone-number{
+    color: grey;
+}
+
+.birthday{
+    color: grey;
+}
+
+.info-section p {
+    font-size: 2rem; /* Larger font size for info */
+    margin: 20px 0;
+}
+
+/* Footer styling */
+footer {
+    width: 100%;
+    text-align: center;
+    padding: 48px 0;
+    background-color: #fff;
+    font-size: 2rem;
+    color: #797979;
+    border-top: 1px solid #ccc;
+    margin-top: 450px;
+}

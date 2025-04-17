@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <script>
+        function validateForm() {
+            let valid = true;
+            const name = document.getElementById('name').value;
+            const day = document.getElementById('day').value;
+            const month = document.getElementById('month').value;
+            const year = document.getElementById('year').value;
+            const email = document.getElementById('email').value;
+            const noEmail = document.getElementById('no-email').checked;  // Check if "No email address" checkbox is checked
+
+            // Clear previous error messages
+            const errorMessages = document.querySelectorAll('.error-message');
+            errorMessages.forEach(msg => msg.textContent = '');
+
+            // Validate Name
+            if (name === '') {
+                document.getElementById('name-error').textContent = '*Please insert a name.';
+                valid = false;
+            }
+
+            // Validate Birthday (DD, MM, YYYY)
+            if (day === '' || month === '' || year === '') {
+                document.getElementById('birthday-error').textContent = '*Please insert your birthday';
+                valid = false;
+            } else {
+                // Check if day, month, and year have the correct number of digits
+                if (day.length !== 2 || month.length !== 2 || year.length !== 4) {
+                    document.getElementById('birthday-error').textContent = '*Please enter a valid birthday with proper digits (DD-MM-YYYY).';
+                    valid = false;
+                }
+            }
+
+            // Validate Email (only if the checkbox is not checked)
+            if (!noEmail && email === '') {
+                document.getElementById('email-error').textContent = '*Please insert a valid email address.';
+                valid = false;
+            } else if (!noEmail && !email.includes('@')) {
+                document.getElementById('email-error').textContent = '*Please insert a valid email address.';
+                valid = false;
+            }
+
+            // If everything is valid, save the data
+            if (valid) {
+                const birthday = `${day}-${month}-${year}`;
+                const phoneNumber = "+60173527250";  // Fixed phone number (as per page 1)
+
+                // Save data to sessionStorage
+                sessionStorage.setItem("name", name);
+                sessionStorage.setItem("birthday", birthday);
+                sessionStorage.setItem("email", email);
+                sessionStorage.setItem("phoneNumber", phoneNumber);
+
+                // Redirect to display page
+                window.location.href = "display.html";
+            }
+        }
+
+        // Function to toggle the read-only status of the email field
+        function toggleEmailReadOnly() {
+            const emailField = document.getElementById('email');
+            const noEmail = document.getElementById('no-email').checked;
+            emailField.readOnly = noEmail;  // Make the email field read-only if checkbox is checked
+            if (noEmail) {
+                emailField.value = '';  // Clear email if no email checkbox is checked
+                document.getElementById('email-error').textContent = '';  // Clear email error
+            }
+        }
+    </script>
+    <link rel="stylesheet" type="text/css" href="/static/registration.css" />
+</head>
+<body>
+    <h1 class="mulah-title">Mulah</h1>
+
+    <!-- Container for the registration form -->
+    <div class="container">
+        <h2>Registration</h2>
+        <div class="please-fill-in">
+            Please fill up your details
+        </div>
+
+        <!-- Name input field -->
+        <div class="input-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" class="form-input">
+            <span id="name-error" class="error-message"></span> <!-- Error message for Name -->
+        </div>
+
+        <!-- Birthday input fields (DD, MM, YYYY) -->
+        <div class="input-group">
+            <label for="birthday">Birthday</label>
+            <div class="birthday-container">
+                <input type="number" id="day" class="form-input date-input" placeholder="DD" max="31">
+                <input type="number" id="month" class="form-input date-input" placeholder="MM" max="12">
+                <input type="number" id="year" class="form-input date-input" placeholder="YYYY">
+            </div>
+            <span id="birthday-error" class="error-message"></span> <!-- Error message for Birthday -->
+        </div>
+
+        <!-- Email input field -->
+        <div class="input-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" class="form-input">
+            <span id="email-error" class="error-message"></span> <!-- Error message for Email -->
+        </div>
+
+        <!-- No email checkbox -->
+        <div class="input-group">
+            <label>
+                <input type="checkbox" id="no-email" onclick="toggleEmailReadOnly()"> No email address
+            </label>
+        </div>
+
+        <!-- Submit button -->
+        <button onclick="validateForm()" class="submit-button">Continue</button>
+    </div>
+
+    <footer>
+        Powered by <span class="footer-brand">MulahRewards.com</span>
+    </footer>
+</body>
+</html>

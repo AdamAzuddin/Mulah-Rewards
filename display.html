@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=626, initial-scale=1.0" />
+    <title>Mulah - Display Data</title>
+    <link rel="stylesheet" type="text/css" href="/static/display.css" />
+    <script>
+        function displayData() {
+            const name = sessionStorage.getItem("name");
+            const birthday = sessionStorage.getItem("birthday");
+            const email = sessionStorage.getItem("email");
+            const phoneNumber = sessionStorage.getItem("phoneNumber");
+
+            // Display phone number, name, and birthday
+            document.getElementById('phoneNumber').innerText = phoneNumber;
+            document.getElementById('name').innerText = name;
+            document.getElementById('birthday').innerText = birthday;
+
+            // Conditionally display the email field and its label only if it's not empty
+            if (email) {
+                document.getElementById('emailLabel').style.display = 'block'; // Show label
+                document.getElementById('email').innerText = email; // Show email
+            } else {
+                document.getElementById('emailLabel').style.display = 'none'; // Hide label
+                document.getElementById('email').style.display = 'none'; // Hide email value
+            }
+        }
+    </script>
+</head>
+<body onload="displayData()">
+    <div class="container">
+        <h1 class="mulah-title">Mulah</h1>
+        
+        <p class="welcome">Welcome <span id="name"></span>!</p>
+        
+        <div class="info-section">
+            <p class="phone-number"><strong>Phone Number:</strong> <span id="phoneNumber"></span></p>
+            <p class="birthday"><strong>Birthday:</strong> <span id="birthday"></span></p>
+            <p id="emailLabel"><strong>Email:</strong> <span id="email"></span></p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Mulah. All rights reserved.</p>
+    </footer>
+</body>
+</html>

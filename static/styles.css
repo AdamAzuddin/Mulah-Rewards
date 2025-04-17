@@ -1,0 +1,132 @@
+/* Set up full height layout */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: serif; /* Default for all text */
+}
+
+/* Main body layout */
+body {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Mulah title */
+.mulah-title {
+  font-family: sans-serif; /* Override to sans-serif */
+  color: #f3751e;
+  font-size: 4rem; /* Increased from 3rem */
+  margin: 80px 0 40px 0; /* Increased vertical margin (top and bottom) */
+  text-align: center;
+}
+
+/* Container with spacing */
+.container {
+  width: 100%;
+  max-width: 520px;
+  padding: 20px;
+  padding-top: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Welcome text */
+.welcome-text {
+  color: #646464;
+  font-size: 5.5rem;
+  font-weight: 300;
+  margin: 0;
+}
+
+/* Subtitle */
+.check-loyalty-text {
+  font-size: 28px;
+  font-weight: bolder;
+  color: #f48231;
+  margin: 30px 0 30px 0;
+}
+
+/* Phone input container */
+.phone-input-container {
+  display: flex;
+  flex-direction: column;
+  font-size: 2rem;
+  margin: 50px 0 30px 0;
+}
+
+
+/* Checkmark styling */
+.phone-number {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%; /* Ensure the container spans the available width */
+  }
+  
+  .checkmark {
+    font-size: 1rem;
+    color: white; /* White color for the checkmark */
+    background-color: grey; /* Grey background color */
+    border-radius: 50%; /* Make it circular */
+    width: 30px; /* Adjust size of the circle */
+    height: 30px; /* Adjust size of the circle */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+  }
+  
+
+select {
+  font-size: 1.2rem;
+  padding: 12px;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid #f56d0d; /* Orange underline */
+}
+
+input {
+  font-size: 1.2rem;
+  padding: 12px;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid #f56d0d; /* Orange underline */
+  flex-grow: 1; /* Make the input span the remaining space */
+}
+
+/* Button */
+button.check-loyalty-points-button {
+  padding: 20px 0;
+  font-size: 1.5rem;
+  background-color: #f3751e;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+button.check-loyalty-points-button:hover {
+  background-color: #d8631a;
+}
+
+/* Footer always at the bottom */
+footer {
+  width: 100%;
+  text-align: center;
+  padding: 48px 0 48px 0;
+  background-color: white;
+  font-size: 2rem;
+  color: #797979; /* Default grey color for footer text */
+  border-top: 1px solid #ccc; /* Gray line before footer */
+}
+
+/* Change color of MulahRewards.com to blue */
+footer .footer-brand {
+  color: #738EBB; /* Blue color for MulahRewards.com */
+}

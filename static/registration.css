@@ -1,0 +1,163 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+body{
+    overflow: hidden;
+}
+
+/* Make the container fill available vertical space */
+.container {
+    max-width: 430px;
+    width: 100%;
+    padding: 20px;
+    background-color: white;
+    margin: 0 auto 0 auto; /* centers horizontally */
+  }
+  
+
+/* Title style */
+h1.mulah-title {
+  font-size: 4rem;
+  color: #f3751e;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Registration form heading */
+h2 {
+  color: #717070;
+  font-size: 4rem;
+  font-weight: 200;
+  margin-bottom: 20px;
+  margin-top: 0;
+}
+
+.please-fill-in {
+  color: #717070;
+  font-size: 1.4rem;
+  font-weight: 200;
+  margin-bottom: 20px;
+}
+
+/* Input group for each label and input pair */
+.input-group {
+  margin-bottom: 20px;
+}
+
+/* Label style */
+label {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  color: #333;
+  display: inline-block;
+}
+
+/* Input field styles */
+.form-input {
+  font-size: 1.2rem;
+  padding: 12px;
+  margin-top: 8px;
+  width: 100%;
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 12px; /* Slight rounded corners for the inputs */
+  outline: none;
+}
+
+.form-input:focus {
+  border-color: #f3751e;
+  box-shadow: 0 0 5px rgba(243, 117, 30, 0.5);
+}
+
+/* Birthday inputs container (for horizontal layout) */
+.birthday-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.date-input {
+  width: 30%; /* Ensure the inputs are side by side */
+  margin-right: 10px; /* Space between the inputs */
+  border-radius: 4px; /* Slight rounded corners for date inputs */
+}
+
+.date-input:last-child {
+  margin-right: 0; /* Remove margin on the last input */
+}
+
+/* Error message style */
+.error-message {
+  color: red;
+  font-size: 1rem;
+  margin-top: 5px;
+}
+
+/* Submit button style */
+.submit-button {
+  padding: 12px 30px;
+  background-color: #f3751e;
+  color: white;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 30px; /* Rounded corners for the submit button */
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100%;
+}
+
+.submit-button:hover {
+  background-color: #d8631a;
+}
+
+/* Footer styling (reuse same as previous page if needed) */
+footer {
+  width: 100%;
+  text-align: center;
+  padding: 36px 0;
+  margin-top: 150px;
+  background-color: white;
+  font-size: 2rem;
+  color: #797979;
+  border-top: 1px solid #ccc;
+}
+
+footer .footer-brand {
+  color: #738ebb;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+
+  .form-input,
+  .submit-button {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  .birthday-container {
+    flex-direction: column; /* Stack inputs vertically on small screens */
+  }
+
+  .date-input {
+    width: 100%;
+    margin-bottom: 10px; /* Add space between inputs in the column layout */
+  }
+
+  .date-input:last-child {
+    margin-bottom: 0;
+  }
+}
